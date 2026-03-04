@@ -1,6 +1,7 @@
 import Image from "next/image";
 import s from "./page.module.css";
 import Link from "next/link";
+import { CardNews } from "./components/cards";
 
 export default function Home() {
   return (
@@ -24,6 +25,45 @@ export default function Home() {
               <button className={s.hero_btn}>Забронювати</button>
             </Link>
           </div>
+        </section>
+
+        <section className={s.news}>
+          <h2 className={s.news_title}>Останні новини</h2>
+
+          <ul className={s.news_list}>
+            <li className={s.news_item}>
+              <CardNews
+                img="/imgs/news-0.png"
+                link="#"
+                text="CYBERDAY від CYBERION! Гравці з усіх міст зійшлися на головному турнірі країни!"
+                date="14.11.2025"
+              />
+            </li>
+            <li className={s.news_item}>
+              <CardNews
+                img="/imgs/news-0.png"
+                link="#"
+                text="CYBERDAY від CYBERION! Гравці з усіх міст зійшлися на головному турнірі країни!"
+                date="14.11.2025"
+              />
+            </li>
+            <li className={s.news_item}>
+              <CardNews
+                img="/imgs/news-0.png"
+                link="#"
+                text="CYBERDAY від CYBERION! Гравці з усіх міст зійшлися на головному турнірі країни!"
+                date="14.11.2025"
+              />
+            </li>
+            <li className={s.news_item}>
+              <CardNews
+                img="/imgs/news-0.png"
+                link="#"
+                text="CYBERDAY від CYBERION! Гравці з усіх міст зійшлися на головному турнірі країни!"
+                date="14.11.2025"
+              />
+            </li>
+          </ul>
         </section>
       </main>
     </div>
