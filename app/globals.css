@@ -33,10 +33,10 @@ html {
 }
 
 body {
+  margin-bottom: 20vw;
   color: var(--white);
   font-family: var(--font-helvetica), sans-serif;
   background-color: #0e0e0e;
-  height: 200vh;
 }
 
 section {
@@ -63,6 +63,10 @@ button {
 ol,
 ul {
   list-style: none;
+}
+
+h1, h2 {
+  text-transform: uppercase;
 }
 
 ::-webkit-scrollbar {
