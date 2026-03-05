@@ -292,3 +292,25 @@
   }
 }
 /* #endregion B E N E F I T S */
+
+/* #region G A L L E R Y */
+.gallery {
+  width: 95%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.gallery_item {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  display: grid;
+}
+.gallary_track {
+  position: relative;
+  gap: 20px;
+}
+.gallary_track img {
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+}
+ /* #endregion G A L L E R Y */

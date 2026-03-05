@@ -1,0 +1,25 @@
+.track {
+  transition: none;
+  display: flex;
+}
+
+.gallary {
+  overflow: hidden;
+  position: relative;
+}
+
+.gallary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #0e0e0e, transparent 10% 90%, #0e0e0e);
+  display: block;
+}
+
+.track img {
+  pointer-events: none;
+  user-select: none;
+}

@@ -3,6 +3,7 @@ import s from "./page.module.css";
 import Link from "next/link";
 import { CardNews } from "./components/cards";
 import ObservedElement from "./components/observed-element";
+import InfiniteGallery from "./components/gallery";
 
 const BnftItem = ({ delay, img, alt, text }) => {
   return (
@@ -117,7 +118,172 @@ export default function Home() {
               />
             </ol>
           </ObservedElement>
+        </section>
 
+        <section className={s.gallery}>
+          <InfiniteGallery className={s.gallary_track}>
+            <div className={s.gallery_item}>
+              <Image
+                className={s.galerry_img}
+                src="/imgs/gallery-1.jpg"
+                width="500"
+                height="300"
+                alt="img"
+              />
+              <Image
+                className={s.galerry_img}
+                src="/imgs/gallery-0.jpg"
+                width="500"
+                height="300"
+                alt="img"
+              />
+              <Image
+                className={s.galerry_img__large}
+                src="/imgs/gallery-0.jpg"
+                width="500"
+                height="300"
+                alt="img"
+              />
+            </div>
+            <div className={s.gallery_item}>
+              <Image
+                className={s.galerry_img}
+                src="/imgs/gallery-0.jpg"
+                width="500"
+                height="300"
+                alt="img"
+              />
+              <Image
+                className={s.galerry_img}
+                src="/imgs/gallery-0.jpg"
+                width="500"
+                height="300"
+                alt="img"
+              />
+              <Image
+                className={s.galerry_img__large}
+                src="/imgs/gallery-0.jpg"
+                width="500"
+                height="300"
+                alt="img"
+              />
+            </div>
+            <div className={s.gallery_item}>
+              <Image
+                className={s.galerry_img}
+                src="/imgs/gallery-0.jpg"
+                width="500"
+                height="300"
+                alt="img"
+              />
+              <Image
+                className={s.galerry_img}
+                src="/imgs/gallery-0.jpg"
+                width="500"
+                height="300"
+                alt="img"
+              />
+              <Image
+                className={s.galerry_img__large}
+                src="/imgs/gallery-0.jpg"
+                width="500"
+                height="300"
+                alt="img"
+              />
+            </div>
+            <div className={s.gallery_item}>
+              <Image
+                className={s.galerry_img}
+                src="/imgs/gallery-0.jpg"
+                width="500"
+                height="300"
+                alt="img"
+              />
+              <Image
+                className={s.galerry_img}
+                src="/imgs/gallery-0.jpg"
+                width="500"
+                height="300"
+                alt="img"
+              />
+              <Image
+                className={s.galerry_img__large}
+                src="/imgs/gallery-0.jpg"
+                width="500"
+                height="300"
+                alt="img"
+              />
+            </div>
+            <div className={s.gallery_item}>
+              <Image
+                className={s.galerry_img}
+                src="/imgs/gallery-0.jpg"
+                width="500"
+                height="300"
+                alt="img"
+              />
+              <Image
+                className={s.galerry_img}
+                src="/imgs/gallery-0.jpg"
+                width="500"
+                height="300"
+                alt="img"
+              />
+              <Image
+                className={s.galerry_img__large}
+                src="/imgs/gallery-0.jpg"
+                width="500"
+                height="300"
+                alt="img"
+              />
+            </div>
+            <div className={s.gallery_item}>
+              <Image
+                className={s.galerry_img}
+                src="/imgs/gallery-0.jpg"
+                width="500"
+                height="300"
+                alt="img"
+              />
+              <Image
+                className={s.galerry_img}
+                src="/imgs/gallery-0.jpg"
+                width="500"
+                height="300"
+                alt="img"
+              />
+              <Image
+                className={s.galerry_img__large}
+                src="/imgs/gallery-0.jpg"
+                width="500"
+                height="300"
+                alt="img"
+              />
+            </div>
+            <div className={s.gallery_item}>
+              <Image
+                className={s.galerry_img}
+                src="/imgs/gallery-0.jpg"
+                width="500"
+                height="300"
+                alt="img"
+              />
+              <Image
+                className={s.galerry_img}
+                src="/imgs/gallery-0.jpg"
+                width="500"
+                height="300"
+                alt="img"
+              />
+              <Image
+                className={s.galerry_img__large}
+                src="/imgs/gallery-0.jpg"
+                width="500"
+                height="300"
+                alt="img"
+              />
+            </div>
+          </InfiniteGallery>
         </section>
       </main>
     </div>
