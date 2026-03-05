@@ -2,6 +2,18 @@ import Image from "next/image";
 import s from "./page.module.css";
 import Link from "next/link";
 import { CardNews } from "./components/cards";
+import ObservedElement from "./components/observed-element";
+
+const BnftItem = ({ delay, img, alt, text }) => {
+  return (
+    <ObservedElement threshold={.8} className={s.observe} activeClass={s.activeItem}>
+      <li className={s.bnft_item} style={{ "--delay": delay }}>
+        <Image src={img} width="78" height="78" alt={alt} />
+        <h3 className={s.bnft_desc}>{text}</h3>
+      </li>
+    </ObservedElement>
+  );
+};
 
 export default function Home() {
   return (
@@ -75,46 +87,37 @@ export default function Home() {
             найбільша мережа кіберспортивних клубів України
           </h2>
 
-          <ol className={s.bnft_list}>
-            <li className={s.bnft_item} style={{ "--delay": "1s" }}>
-              <Image
-                src="/icons/bnft-0.svg"
-                width="78"
-                height="78"
+          <ObservedElement threshold={0.2} activeClass={s.activeList}>
+            <ol className={s.bnft_list}>
+              <BnftItem
+                delay="1s"
+                img="/icons/bnft-0.svg"
                 alt="ігрові ПК"
+                text="Потужні ігрові ПК"
               />
-              <h3 className={s.bnft_desc}>Потужні ігрові ПК</h3>
-            </li>
-            <li className={s.bnft_item} style={{ "--delay": "2.3s" }}>
-              <Image
-                src="/icons/bnft-1.svg"
-                width="78"
-                height="78"
+
+              <BnftItem
+                delay="2.3s"
+                img="/icons/bnft-1.svg"
                 alt="комфорт і сервіс"
+                text="Максимальний комфорт і бездоганний сервіс"
               />
-              <h3 className={s.bnft_desc}>
-                Максимальний комфорт і бездоганний сервіс
-              </h3>
-            </li>
-            <li className={s.bnft_item} style={{ "--delay": "3.6s" }}>
-              <Image
-                src="/icons/bnft-2.svg"
-                width="78"
-                height="78"
+              <BnftItem
+                delay="3.6s"
+                img="/icons/bnft-2.svg"
                 alt="турніри"
+                text="Власні регулярні турніри"
               />
-              <h3 className={s.bnft_desc}>Власні регулярні турніри</h3>
-            </li>
-            <li className={s.bnft_item} style={{ "--delay": "4.9s" }}>
-              <Image
-                src="/icons/bnft-3.svg"
-                width="78"
-                height="78"
+
+              <BnftItem
+                delay="4.9s"
+                img="/icons/bnft-3.svg"
                 alt="розіграші"
+                text="Акції та розіграші"
               />
-              <h3 className={s.bnft_desc}>Акції та розіграші</h3>
-            </li>
-          </ol>
+            </ol>
+          </ObservedElement>
+
         </section>
       </main>
     </div>

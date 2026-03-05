@@ -171,7 +171,6 @@
   height: 4px;
   background: linear-gradient(-90deg, var(--yellow) 50%, var(--black) 50%);
   background-size: 200%;
-  animation: bnft_line 4s linear 1s forwards;
   display: block;
 }
 
@@ -185,7 +184,6 @@
   border: 1px solid var(--yellow);
   border-radius: 100vw;
   background-color: #1d1d1d;
-  animation: bnft_icon 0.3s linear var(--delay) forwards;
   display: block;
 }
 
@@ -201,7 +199,6 @@
   border: 1px solid var(--yellow);
   border-radius: 8px;
   opacity: 0;
-  animation: bnft_desc 0.3s linear var(--delay) forwards;
   display: block;
 }
 
@@ -218,10 +215,14 @@
   display: block;
 }
 
-@property --visibility {
-  syntax: "<number>";
-  inherits: true;
-  initial-value: 0;
+.activeList .bnft_list::before {
+  animation: bnft_line 4s linear 1s forwards;
+}
+.activeList .bnft_item img {
+  animation: bnft_icon 0.3s linear var(--delay) forwards;
+}
+.activeList .bnft_desc {
+  animation: bnft_desc 0.3s linear var(--delay) forwards;
 }
 
 @media (max-width: 991px) {
@@ -240,7 +241,7 @@
   .bnft_item {
     width: fit-content;
   }
-  .bnft_item:nth-child(even) {
+  .bnft_list .observe:nth-child(even) {
     margin-top: -5vw;
     justify-self: right;
   }
@@ -253,13 +254,14 @@
     padding: 2vw 4vw;
     font-size: 4vw;
   }
-  .bnft_item img, .bnft_desc {
-    animation-play-state: paused;
-    view-timeline: --check-visible block;
-    animation-range: entry 150%;
-    animation-timeline: --check-visible;
-    animation-play-state: running;
-    animation-iteration-count: 1;
+  .activeItem {
+    width: fit-content;
+  }
+  .activeItem .bnft_item img {
+    animation: bnft_icon 0.8s linear forwards;
+  }
+  .activeItem .bnft_desc {
+    animation: bnft_desc 0.8s linear forwards;
   }
 }
 
