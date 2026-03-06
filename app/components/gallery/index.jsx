@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState, Children } from "react";
-import s from "./style.module.css";
+import s from "./gallery.module.css";
 
 export default function InfiniteGallery({ className, children }) {
   const trackRef = useRef(null); // Тепер ми рухаємо цей трек

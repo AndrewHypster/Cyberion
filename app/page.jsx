@@ -7,7 +7,11 @@ import InfiniteGallery from "./components/gallery";
 
 const BnftItem = ({ delay, img, alt, text }) => {
   return (
-    <ObservedElement threshold={.8} className={s.observe} activeClass={s.activeItem}>
+    <ObservedElement
+      threshold={0.8}
+      className={s.observe}
+      activeClass={s.activeItem}
+    >
       <li className={s.bnft_item} style={{ "--delay": delay }}>
         <Image src={img} width="78" height="78" alt={alt} />
         <h3 className={s.bnft_desc}>{text}</h3>
@@ -137,13 +141,15 @@ export default function Home() {
                 height="300"
                 alt="img"
               />
-              <div className={s.gallery_img__large}><Image
-                className={s.gallery_img}
-                src="/imgs/gallery-0.jpg"
-                width="500"
-                height="300"
-                alt="img"
-              /></div>
+              <div className={s.gallery_img__large}>
+                <Image
+                  className={s.gallery_img}
+                  src="/imgs/gallery-0.jpg"
+                  width="500"
+                  height="300"
+                  alt="img"
+                />
+              </div>
             </div>
             <div className={s.gallery_item}>
               <Image
@@ -160,13 +166,15 @@ export default function Home() {
                 height="300"
                 alt="img"
               />
-              <div className={s.gallery_img__large}><Image
-                className={s.gallery_img}
-                src="/imgs/gallery-0.jpg"
-                width="500"
-                height="300"
-                alt="img"
-              /></div>
+              <div className={s.gallery_img__large}>
+                <Image
+                  className={s.gallery_img}
+                  src="/imgs/gallery-0.jpg"
+                  width="500"
+                  height="300"
+                  alt="img"
+                />
+              </div>
             </div>
             <div className={s.gallery_item}>
               <Image
@@ -183,13 +191,15 @@ export default function Home() {
                 height="300"
                 alt="img"
               />
-              <div className={s.gallery_img__large}><Image
-                className={s.gallery_img}
-                src="/imgs/gallery-0.jpg"
-                width="500"
-                height="300"
-                alt="img"
-              /></div>
+              <div className={s.gallery_img__large}>
+                <Image
+                  className={s.gallery_img}
+                  src="/imgs/gallery-0.jpg"
+                  width="500"
+                  height="300"
+                  alt="img"
+                />
+              </div>
             </div>
             <div className={s.gallery_item}>
               <Image
@@ -206,13 +216,15 @@ export default function Home() {
                 height="300"
                 alt="img"
               />
-              <div className={s.gallery_img__large}><Image
-                className={s.gallery_img}
-                src="/imgs/gallery-0.jpg"
-                width="500"
-                height="300"
-                alt="img"
-              /></div>
+              <div className={s.gallery_img__large}>
+                <Image
+                  className={s.gallery_img}
+                  src="/imgs/gallery-0.jpg"
+                  width="500"
+                  height="300"
+                  alt="img"
+                />
+              </div>
             </div>
             <div className={s.gallery_item}>
               <Image
@@ -229,13 +241,15 @@ export default function Home() {
                 height="300"
                 alt="img"
               />
-              <div className={s.gallery_img__large}><Image
-                className={s.gallery_img}
-                src="/imgs/gallery-0.jpg"
-                width="500"
-                height="300"
-                alt="img"
-              /></div>
+              <div className={s.gallery_img__large}>
+                <Image
+                  className={s.gallery_img}
+                  src="/imgs/gallery-0.jpg"
+                  width="500"
+                  height="300"
+                  alt="img"
+                />
+              </div>
             </div>
             <div className={s.gallery_item}>
               <Image
@@ -252,13 +266,15 @@ export default function Home() {
                 height="300"
                 alt="img"
               />
-              <div className={s.gallery_img__large}><Image
-                className={s.gallery_img}
-                src="/imgs/gallery-0.jpg"
-                width="500"
-                height="300"
-                alt="img"
-              /></div>
+              <div className={s.gallery_img__large}>
+                <Image
+                  className={s.gallery_img}
+                  src="/imgs/gallery-0.jpg"
+                  width="500"
+                  height="300"
+                  alt="img"
+                />
+              </div>
             </div>
             <div className={s.gallery_item}>
               <Image
@@ -275,15 +291,27 @@ export default function Home() {
                 height="300"
                 alt="img"
               />
-              <div className={s.gallery_img__large}><Image
-                className={s.gallery_img}
-                src="/imgs/gallery-0.jpg"
-                width="500"
-                height="300"
-                alt="img"
-              /></div>
+              <div className={s.gallery_img__large}>
+                <Image
+                  className={s.gallery_img}
+                  src="/imgs/gallery-0.jpg"
+                  width="500"
+                  height="300"
+                  alt="img"
+                />
+              </div>
             </div>
           </InfiniteGallery>
+        </section>
+
+        <section className={s.map}>
+          <div className={s.map_google}>
+            <iframe
+              src="https://www.google.com/maps/d/u/0/embed?mid=15Ilu3mg1UOo3QrWmbhJqgDbGuUvG_oY&ehbc=2E312F&noprof=1"
+              width="640"
+              height="640"
+            ></iframe>
+          </div>
         </section>
       </main>
     </div>

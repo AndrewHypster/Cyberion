@@ -1,5 +1,5 @@
 import Link from "next/link";
-import s from "./style.module.css";
+import s from "./cards.module.css";
 import Image from "next/image";
 
 export const CardNews = ({ img, text, date, link, className }) => {
