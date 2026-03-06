@@ -326,6 +326,12 @@
 }
 
 @media (max-width: 991px) {
+  .gallery_track {
+    gap: 2vw;
+  }
+  .gallery_item {
+    gap: 2vw;
+  }
   .gallery_img {
     width: 45vw;
   }
