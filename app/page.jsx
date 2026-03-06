@@ -121,167 +121,167 @@ export default function Home() {
         </section>
 
         <section className={s.gallery}>
-          <InfiniteGallery className={s.gallary_track}>
+          <InfiniteGallery className={s.gallery_track}>
             <div className={s.gallery_item}>
               <Image
-                className={s.galerry_img}
+                className={s.gallery_img}
                 src="/imgs/gallery-1.jpg"
                 width="500"
                 height="300"
                 alt="img"
               />
               <Image
-                className={s.galerry_img}
+                className={s.gallery_img}
                 src="/imgs/gallery-0.jpg"
                 width="500"
                 height="300"
                 alt="img"
               />
-              <Image
-                className={s.galerry_img__large}
+              <div className={s.gallery_img__large}><Image
+                className={s.gallery_img}
                 src="/imgs/gallery-0.jpg"
                 width="500"
                 height="300"
                 alt="img"
-              />
+              /></div>
             </div>
             <div className={s.gallery_item}>
               <Image
-                className={s.galerry_img}
+                className={s.gallery_img}
                 src="/imgs/gallery-0.jpg"
                 width="500"
                 height="300"
                 alt="img"
               />
               <Image
-                className={s.galerry_img}
+                className={s.gallery_img}
                 src="/imgs/gallery-0.jpg"
                 width="500"
                 height="300"
                 alt="img"
               />
-              <Image
-                className={s.galerry_img__large}
+              <div className={s.gallery_img__large}><Image
+                className={s.gallery_img}
                 src="/imgs/gallery-0.jpg"
                 width="500"
                 height="300"
                 alt="img"
-              />
+              /></div>
             </div>
             <div className={s.gallery_item}>
               <Image
-                className={s.galerry_img}
+                className={s.gallery_img}
                 src="/imgs/gallery-0.jpg"
                 width="500"
                 height="300"
                 alt="img"
               />
               <Image
-                className={s.galerry_img}
+                className={s.gallery_img}
                 src="/imgs/gallery-0.jpg"
                 width="500"
                 height="300"
                 alt="img"
               />
-              <Image
-                className={s.galerry_img__large}
+              <div className={s.gallery_img__large}><Image
+                className={s.gallery_img}
                 src="/imgs/gallery-0.jpg"
                 width="500"
                 height="300"
                 alt="img"
-              />
+              /></div>
             </div>
             <div className={s.gallery_item}>
               <Image
-                className={s.galerry_img}
+                className={s.gallery_img}
                 src="/imgs/gallery-0.jpg"
                 width="500"
                 height="300"
                 alt="img"
               />
               <Image
-                className={s.galerry_img}
+                className={s.gallery_img}
                 src="/imgs/gallery-0.jpg"
                 width="500"
                 height="300"
                 alt="img"
               />
-              <Image
-                className={s.galerry_img__large}
+              <div className={s.gallery_img__large}><Image
+                className={s.gallery_img}
                 src="/imgs/gallery-0.jpg"
                 width="500"
                 height="300"
                 alt="img"
-              />
+              /></div>
             </div>
             <div className={s.gallery_item}>
               <Image
-                className={s.galerry_img}
+                className={s.gallery_img}
                 src="/imgs/gallery-0.jpg"
                 width="500"
                 height="300"
                 alt="img"
               />
               <Image
-                className={s.galerry_img}
+                className={s.gallery_img}
                 src="/imgs/gallery-0.jpg"
                 width="500"
                 height="300"
                 alt="img"
               />
-              <Image
-                className={s.galerry_img__large}
+              <div className={s.gallery_img__large}><Image
+                className={s.gallery_img}
                 src="/imgs/gallery-0.jpg"
                 width="500"
                 height="300"
                 alt="img"
-              />
+              /></div>
             </div>
             <div className={s.gallery_item}>
               <Image
-                className={s.galerry_img}
+                className={s.gallery_img}
                 src="/imgs/gallery-0.jpg"
                 width="500"
                 height="300"
                 alt="img"
               />
               <Image
-                className={s.galerry_img}
+                className={s.gallery_img}
                 src="/imgs/gallery-0.jpg"
                 width="500"
                 height="300"
                 alt="img"
               />
-              <Image
-                className={s.galerry_img__large}
+              <div className={s.gallery_img__large}><Image
+                className={s.gallery_img}
                 src="/imgs/gallery-0.jpg"
                 width="500"
                 height="300"
                 alt="img"
-              />
+              /></div>
             </div>
             <div className={s.gallery_item}>
               <Image
-                className={s.galerry_img}
+                className={s.gallery_img}
                 src="/imgs/gallery-0.jpg"
                 width="500"
                 height="300"
                 alt="img"
               />
               <Image
-                className={s.galerry_img}
+                className={s.gallery_img}
                 src="/imgs/gallery-0.jpg"
                 width="500"
                 height="300"
                 alt="img"
               />
-              <Image
-                className={s.galerry_img__large}
+              <div className={s.gallery_img__large}><Image
+                className={s.gallery_img}
                 src="/imgs/gallery-0.jpg"
                 width="500"
                 height="300"
                 alt="img"
-              />
+              /></div>
             </div>
           </InfiniteGallery>
         </section>
