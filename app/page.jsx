@@ -305,12 +305,45 @@ export default function Home() {
         </section>
 
         <section className={s.map}>
+          <h2 className={s.map_title}>Наші клуби</h2>
           <div className={s.map_google}>
             <iframe
               src="https://www.google.com/maps/d/u/0/embed?mid=15Ilu3mg1UOo3QrWmbhJqgDbGuUvG_oY&ehbc=2E312F&noprof=1"
               width="640"
               height="640"
             ></iframe>
+          </div>
+        </section>
+
+        <section className={s.form_sec}>
+          <div className={s.form_wrap}>
+            <form className={s.form}>
+              <h2 className={s.form_title}>
+                ХОЧЕШ <span>ВЛАСНИЙ КЛУБ?</span>
+                <br />
+                <small>НАПИШИ НАМ</small>
+              </h2>
+              <input type="text" name="Ім'я" placeholder="Ім'я" />
+              <input
+                type="email"
+                name="Email"
+                placeholder="Email"
+                autoComplete='true'
+              />
+              <input
+                type="text"
+                name="Повідомлення"
+                placeholder="Повідомлення"
+              />
+              <button>Відправити</button>
+            </form>
+            <Image
+              className={s.form_img}
+              src="/imgs/main-form.jpg"
+              width="430"
+              height="440"
+              alt="наші люди"
+            />
           </div>
         </section>
       </main>

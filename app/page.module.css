@@ -144,7 +144,8 @@
 /* #endregion N E W S */
 
 /* #region B E N E F I T S */
-.bnft_title {
+.bnft_title,
+.map_title {
   max-width: 723px;
   margin: 0 auto;
   margin-bottom: 64px;
@@ -317,7 +318,7 @@
   border-radius: 20px;
 }
 .gallery_img__large {
-  aspect-ratio: 1 / .5;
+  aspect-ratio: 1 / 0.5;
   grid-column: span 2;
 }
 .gallery_img__large .gallery_img {
@@ -336,22 +337,98 @@
     width: 45vw;
   }
 }
- /* #endregion G A L L E R Y */
+/* #endregion G A L L E R Y */
+
+/* #region M A P */
 .map_google {
   width: 90vw;
   margin: 0 auto;
-  aspect-ratio: 1 / .4;
+  aspect-ratio: 1 / 0.4;
   overflow: hidden;
 }
-  .map_google iframe {
-    width: 100%;
-    height: 100%;
-    transform: translateY(-60px);
-  }
+.map_google iframe {
+  width: 100%;
+  height: 100%;
+  transform: translateY(-60px);
+  scale: 1.3;
+}
 
 @media (max-width: 991px) {
   .map_google {
-
-  aspect-ratio: 1 / .7;
+    aspect-ratio: 1 / 0.7;
   }
 }
+/* #endregion M A P */
+
+/* #region F O R M */
+.form_sec {
+  width: 90%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.form_wrap {
+  position: relative;
+  left: -50%;
+  width: 150%;
+  padding: 56px;
+  background-color: #0e0e0e;
+  border-radius: 100vw;
+  justify-content: right;
+  gap: 4px;
+  display: flex;
+}
+
+.form_wrap::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% + 30px);
+  height: calc(100% + 30px);
+  background: linear-gradient(90deg, #0e0e0e 25%, #fff);
+  border-radius: 100vw;
+  display: block;
+}
+.form_img {
+  width: 450px;
+  height: 450px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 100vw;
+}
+.form_title {
+font-size: 60px;
+line-height: 1em;
+text-wrap: wrap;
+}
+.form_title span {
+  color: var(--yellow);
+}
+.form_title small {
+  font-size: .6em;
+}
+.form {
+  grid-template-rows: auto repeat(4, 1fr);
+  gap: 20px;
+  display: grid;
+}
+.form input, .form button {
+  width: 90%;
+  margin-right: auto;
+  display: block;
+}
+.form input {
+  padding: 18px;
+  border: 2px solid #555;
+  background: rgba(29, 29, 29, .4);
+  border-radius: 100vw;
+  color: var(--white);
+}
+.form button {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+/* #endregion F O R M */
