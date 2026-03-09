@@ -355,7 +355,8 @@
 
 @media (max-width: 991px) {
   .map_title {
-    font-size: 6.4vw;
+    font-size: 9.5vw;
+    margin-bottom: 4vw;
   }
   .map_google {
     width: 95vw;
