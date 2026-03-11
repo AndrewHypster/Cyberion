@@ -1,0 +1,91 @@
+.slider {
+  position: fixed;
+  inset: 0;
+  z-index: 101;
+  width: 100dvw;
+  height: 100dvh;
+  box-sizing: border-box;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.803);
+  display: none;
+}
+
+.slider.open {
+  display: flex;
+}
+
+.list {
+  display: flex;
+}
+
+.item {
+  position: relative;
+  width: 100dvw;
+  height: 100dvh;
+  padding: 20px;
+  transform: translateX(calc(100dvw*var(--index)));
+}
+
+.item img {
+  max-width: 90vw;
+  max-height: 90vh;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+}
+
+.btn {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  font-size: 34px;
+  align-items: center;
+  text-align: center;
+}
+
+.prev {
+  left: 40px;
+}
+.next {
+  right: 40px;
+}
+
+.phone_btn {
+  position: absolute;
+  z-index: 1;
+  width: 30vw;
+  height: 100dvh;
+  background-color: transparent;
+  border-radius: 0;
+  display: none;
+}
+
+.phone_next {
+  right: 0;
+}
+
+.close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 2;
+  font-size: 36px;
+  color: var(--white);
+  font-weight: 700;
+  background-color: transparent;
+}
+
+@media (max-width: 991px) {
+  .close {
+    font-size: 8vw;
+  }
+  .btn {
+    display: none;
+  }
+  .phone_btn {
+    display: block;
+  }
+}

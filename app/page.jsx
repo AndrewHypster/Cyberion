@@ -1,9 +1,48 @@
+'use client'
+
 import Image from "next/image";
 import s from "./page.module.css";
 import Link from "next/link";
 import { CardNews } from "./components/cards";
 import ObservedElement from "./components/observed-element";
 import InfiniteGallery from "./components/gallery";
+
+const galleryData = [
+  { id: 0, src: "/imgs/gallery-0.jpg", size: "small" },
+  { id: 1, src: "/imgs/gallery-1.jpg", size: "small" },
+  { id: 2, src: "/imgs/gallery-2.jpg", size: "large" }, // Займає місце двох
+  { id: 3, src: "/imgs/gallery-3.jpg", size: "small" },
+  { id: 4, src: "/imgs/gallery-4.jpg", size: "small" },
+  { id: 5, src: "/imgs/gallery-5.jpg", size: "large" },
+  { id: 6, src: "/imgs/gallery-6.jpg", size: "small" },
+  { id: 7, src: "/imgs/gallery-7.jpg", size: "small" },
+  { id: 8, src: "/imgs/gallery-8.jpg", size: "large" },
+  { id: 9, src: "/imgs/gallery-9.jpg", size: "small" },
+  { id: 10, src: "/imgs/gallery-10.jpg", size: "small" },
+  { id: 11, src: "/imgs/gallery-11.jpg", size: "large" },
+  { id: 12, src: "/imgs/gallery-12.jpg", size: "small" },
+  { id: 13, src: "/imgs/gallery-13.jpg", size: "small" },
+  { id: 14, src: "/imgs/gallery-14.jpg", size: "large" },
+  { id: 15, src: "/imgs/gallery-15.jpg", size: "small" },
+  { id: 16, src: "/imgs/gallery-16.jpg", size: "small" },
+  { id: 17, src: "/imgs/gallery-17.jpg", size: "large" },
+];
+
+const createGroups = (data) => {
+  const groups = [];
+  let currentGroup = [];
+
+  data.forEach((item) => {
+    currentGroup.push(item);
+    if (item.size === "large" || currentGroup.length === 3) {
+      groups.push(currentGroup);
+      currentGroup = [];
+    }
+  });
+  return groups;
+};
+
+const groups = createGroups(galleryData);
 
 const BnftItem = ({ delay, img, alt, text }) => {
   return (
@@ -21,6 +60,7 @@ const BnftItem = ({ delay, img, alt, text }) => {
 };
 
 export default function Home() {
+  
   return (
     <div className={s.page}>
       <main className={s.main}>
@@ -125,183 +165,31 @@ export default function Home() {
         </section>
 
         <section className={s.gallery}>
-          <InfiniteGallery className={s.gallery_track}>
-            <div className={s.gallery_item}>
-              <Image
-                className={s.gallery_img}
-                src="/imgs/gallery-1.jpg"
-                width="500"
-                height="300"
-                alt="img"
-              />
-              <Image
-                className={s.gallery_img}
-                src="/imgs/gallery-0.jpg"
-                width="500"
-                height="300"
-                alt="img"
-              />
-              <div className={s.gallery_img__large}>
-                <Image
-                  className={s.gallery_img}
-                  src="/imgs/gallery-0.jpg"
-                  width="500"
-                  height="300"
-                  alt="img"
-                />
-              </div>
-            </div>
-            <div className={s.gallery_item}>
-              <Image
-                className={s.gallery_img}
-                src="/imgs/gallery-0.jpg"
-                width="500"
-                height="300"
-                alt="img"
-              />
-              <Image
-                className={s.gallery_img}
-                src="/imgs/gallery-0.jpg"
-                width="500"
-                height="300"
-                alt="img"
-              />
-              <div className={s.gallery_img__large}>
-                <Image
-                  className={s.gallery_img}
-                  src="/imgs/gallery-0.jpg"
-                  width="500"
-                  height="300"
-                  alt="img"
-                />
-              </div>
-            </div>
-            <div className={s.gallery_item}>
-              <Image
-                className={s.gallery_img}
-                src="/imgs/gallery-0.jpg"
-                width="500"
-                height="300"
-                alt="img"
-              />
-              <Image
-                className={s.gallery_img}
-                src="/imgs/gallery-0.jpg"
-                width="500"
-                height="300"
-                alt="img"
-              />
-              <div className={s.gallery_img__large}>
-                <Image
-                  className={s.gallery_img}
-                  src="/imgs/gallery-0.jpg"
-                  width="500"
-                  height="300"
-                  alt="img"
-                />
-              </div>
-            </div>
-            <div className={s.gallery_item}>
-              <Image
-                className={s.gallery_img}
-                src="/imgs/gallery-0.jpg"
-                width="500"
-                height="300"
-                alt="img"
-              />
-              <Image
-                className={s.gallery_img}
-                src="/imgs/gallery-0.jpg"
-                width="500"
-                height="300"
-                alt="img"
-              />
-              <div className={s.gallery_img__large}>
-                <Image
-                  className={s.gallery_img}
-                  src="/imgs/gallery-0.jpg"
-                  width="500"
-                  height="300"
-                  alt="img"
-                />
-              </div>
-            </div>
-            <div className={s.gallery_item}>
-              <Image
-                className={s.gallery_img}
-                src="/imgs/gallery-0.jpg"
-                width="500"
-                height="300"
-                alt="img"
-              />
-              <Image
-                className={s.gallery_img}
-                src="/imgs/gallery-0.jpg"
-                width="500"
-                height="300"
-                alt="img"
-              />
-              <div className={s.gallery_img__large}>
-                <Image
-                  className={s.gallery_img}
-                  src="/imgs/gallery-0.jpg"
-                  width="500"
-                  height="300"
-                  alt="img"
-                />
-              </div>
-            </div>
-            <div className={s.gallery_item}>
-              <Image
-                className={s.gallery_img}
-                src="/imgs/gallery-0.jpg"
-                width="500"
-                height="300"
-                alt="img"
-              />
-              <Image
-                className={s.gallery_img}
-                src="/imgs/gallery-0.jpg"
-                width="500"
-                height="300"
-                alt="img"
-              />
-              <div className={s.gallery_img__large}>
-                <Image
-                  className={s.gallery_img}
-                  src="/imgs/gallery-0.jpg"
-                  width="500"
-                  height="300"
-                  alt="img"
-                />
-              </div>
-            </div>
-            <div className={s.gallery_item}>
-              <Image
-                className={s.gallery_img}
-                src="/imgs/gallery-0.jpg"
-                width="500"
-                height="300"
-                alt="img"
-              />
-              <Image
-                className={s.gallery_img}
-                src="/imgs/gallery-0.jpg"
-                width="500"
-                height="300"
-                alt="img"
-              />
-              <div className={s.gallery_img__large}>
-                <Image
-                  className={s.gallery_img}
-                  src="/imgs/gallery-0.jpg"
-                  width="500"
-                  height="300"
-                  alt="img"
-                />
-              </div>
-            </div>
-          </InfiniteGallery>
+            <InfiniteGallery className={s.gallery_track} imgsGallery={galleryData}>
+              {groups.map((group, gIdx) => (
+                <div key={gIdx} className={s.gallery_item}>
+                  {group.map((img) => (
+                    <div
+                      key={img.id}
+                      data-photo-id={img.id}
+                      className={
+                        img.size === "large"
+                          ? s.gallery_img__large
+                          : s.gallery_img_wrapper
+                      }
+                    >
+                      <Image
+                        src={img.src}
+                        width={500}
+                        height={300}
+                        alt="img"
+                        className={s.gallery_img}
+                      />
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </InfiniteGallery>
         </section>
 
         <section className={s.map}>
@@ -328,7 +216,7 @@ export default function Home() {
                 type="email"
                 name="Email"
                 placeholder="Email"
-                autoComplete='true'
+                autoComplete="true"
               />
               <input
                 type="text"
