@@ -23,19 +23,19 @@ const Slider = ({ children, currentId, setCurrentId }) => {
       <button className={`${s.btn} ${s.prev}`} onClick={() => prev()}>
         &lt;
       </button>
-      <button
+      <div
         className={`${s.phone_btn} ${s.phone_prev}`}
         onClick={() => prev()}
-      ></button>
+      ></div>
       <ul className={s.list} style={{ "--index": -currentId }}>
         {Children.map(children, (child) => (
           <li className={s.item}>{child}</li>
         ))}
       </ul>
-      <button
+      <div
         className={`${s.phone_btn} ${s.phone_next}`}
         onClick={() => next()}
-      ></button>
+      ></div>
       <button className={`${s.btn} ${s.next}`} onClick={() => next()}>
         &gt;
       </button>
