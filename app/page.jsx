@@ -165,31 +165,35 @@ export default function Home() {
         </section>
 
         <section className={s.gallery}>
-            <InfiniteGallery className={s.gallery_track} imgsGallery={galleryData}>
-              {groups.map((group, gIdx) => (
-                <div key={gIdx} className={s.gallery_item}>
-                  {group.map((img) => (
-                    <div
-                      key={img.id}
-                      data-photo-id={img.id}
-                      className={
-                        img.size === "large"
-                          ? s.gallery_img__large
-                          : s.gallery_img_wrapper
-                      }
-                    >
-                      <Image
-                        src={img.src}
-                        width={500}
-                        height={300}
-                        alt="img"
-                        className={s.gallery_img}
-                      />
-                    </div>
-                  ))}
-                </div>
-              ))}
-            </InfiniteGallery>
+          <InfiniteGallery
+            className={s.gallery_track}
+            imgsGallery={galleryData}
+          >
+            {groups.map((group, gIdx) => (
+              <div key={gIdx} className={s.gallery_item}>
+                {group.map((img) => (
+                  <div
+                    key={img.id}
+                    data-photo-id={img.id}
+                    className={
+                      img.size === "large"
+                        ? s.gallery_img__large
+                        : s.gallery_img_wrapper
+                    }
+                  >
+                    <Image
+                      src={img.src}
+                      width={500}
+                      height={300}
+                      sizes="(max-width: 768px) 50vw, 90vw"
+                      alt="img"
+                      className={s.gallery_img}
+                    />
+                  </div>
+                ))}
+              </div>
+            ))}
+          </InfiniteGallery>
         </section>
 
         <section className={s.map}>
