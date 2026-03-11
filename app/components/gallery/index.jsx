@@ -115,9 +115,14 @@ export default function InfiniteGallery({ className, children, imgsGallery }) {
         </div>
       </div>
       {/* SLIDER */}
-      <Slider currentId={selectedId} setCurrentId={setSelectedId} >
+      <Slider currentId={selectedId} setCurrentId={setSelectedId}>
         {imgsGallery.map((img) => (
-          <Image src={img.src} fill size="100vw" alt="img" />
+          <Image
+            src={img.src}
+            fill
+            sizes="(max-width: 768px) 50vw, 90vw"
+            alt="img"
+          />
         ))}
       </Slider>
     </>
