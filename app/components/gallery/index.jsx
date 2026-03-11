@@ -21,8 +21,10 @@ export default function InfiniteGallery({ className, children, imgsGallery }) {
     []
   );
 
-  const [isDown, setIsDown] = useState(false);
+  const [isDown, setIsDown] = useState(true);
   const [startX, setStartX] = useState(0);
+
+  useEffect(() => setIsDown(true), [])
 
   const moveGallery = (delta) => {
     if (!trackRef.current) return;
