@@ -8,17 +8,17 @@ const Slider = ({ children, currentId, setCurrentId }) => {
   const totalItems = React.Children.count(children);
 
   const prev = () => {
-    setCurrentId((p) => (p > 0 ? p - 1 : p));
+    setCurrentId((p) => (p > 0 ? p - 1 : totalItems-1));
   };
 
   const next = () => {
-    setCurrentId((p) => (p < totalItems - 1 ? p + 1 : p));
+    setCurrentId((p) => (p < totalItems - 1 ? p + 1 : 0));
   };
 
   useEffect(() => console.log(currentId), [currentId]);
 
   return (
-    <div className={`${s.slider} ${!!currentId & currentId >= 0 ? s.open : ""}`}>
+    <div className={`${s.slider} ${!!currentId | currentId == 0 ? s.open : ""}`}>
       <button className={s.close} onClick={() => setCurrentId(null)}>X</button>
       <button className={`${s.btn} ${s.prev}`} onClick={() => prev()}>
         &lt;
