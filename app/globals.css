@@ -67,6 +67,10 @@ button {
   border: none;
   outline: none;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  user-select: none;
+  -webkit-touch-callout: none;
 }
 
 ol,

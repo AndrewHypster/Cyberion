@@ -1,23 +1,29 @@
-.header {
+.wrapper {
   position: sticky;
   top: 0;
   z-index: 100;
+}
+
+.header {
   height: 86px;
   padding: 0 40px;
   align-items: center;
   display: flex;
 }
 
-.header::before {
-  content: '';
+.wrapper::before {
+  content: "";
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
+  z-index: -1;
   width: 100%;
   height: 100%;
   background: #0000004d;
+  -webkit-backdrop-filter: blur(7.5px);
   backdrop-filter: blur(7.5px);
-  z-index: -1;
+}
+.wrapper.open {
+  height: 100dvh;
 }
 
 .content {
@@ -51,11 +57,11 @@
 }
 
 .itemLink::after {
-  content: '';
+  content: "";
   width: 0%;
   height: 1px;
   background-color: var(--yellow);
-  transition: all .3s;
+  transition: all 0.3s;
   display: block;
 }
 
@@ -78,11 +84,72 @@
   display: none;
 }
 
-.sidebar >* {
+.sidebar > * {
   width: 100%;
   height: 4px;
   background-color: var(--yellow);
   border-radius: 100vw;
+}
+
+.menu {
+  height: 0;
+  overflow: hidden;
+  font-size: 6vw;
+}
+.menu a {
+  width: 150%;
+  text-align: center;
+  font-weight: 400;
+  display: block;
+}
+.menu ul {
+  gap: 2.5vw;
+  display: grid;
+}
+.menu li {
+  width: fit-content;
+  margin: 0 auto;
+  padding-bottom: 1vw;
+}
+.menu li::after {
+  content: '';
+  height: 2px;
+  width: 150%;
+  margin-top: 1vw;
+  background-color: var(--white);
+  display: block;
+}
+.menuOpen {
+  height: 100%;
+  margin-top: 8vw;
+}
+
+/* Бургер анімація */
+.sidebarBtn {
+  width: 7vw;
+  height: 4.5vw;
+  background-color: transparent;
+  justify-content: space-between;
+  flex-direction: column;
+  display: none;
+}
+
+.sidebarBtn span {
+  width: 100%;
+  height: 4px;
+  background-color: var(--yellow);
+  border-radius: 100vw;
+}
+
+/* Анімація в хрестик при відкритті */
+.active span:nth-child(1) {
+  transform: translateY(1.9vw) rotate(45deg);
+}
+.active span:nth-child(2) {
+  opacity: 0;
+}
+.active span:nth-child(3) {
+  transform: translateY(-1.9vw) rotate(-45deg);
 }
 
 @media (max-width: 991px) {
@@ -99,7 +166,7 @@
   .navigation {
     display: none;
   }
-  .sidebar {
+  .sidebarBtn {
     display: flex;
   }
 }

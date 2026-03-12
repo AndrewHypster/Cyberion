@@ -72,6 +72,7 @@ export default function Home() {
               width="1069"
               height="181"
               alt="logo"
+              loading="eager"
               priority
             />
             <h1 className={s.hero_title}>Андрійко Dev</h1>
@@ -207,6 +208,7 @@ export default function Home() {
               loading="lazy"
               aria-hidden="false"
               tabIndex="0"
+              title="Локація клубів CYBERION"
             ></iframe>
           </div>
         </section>

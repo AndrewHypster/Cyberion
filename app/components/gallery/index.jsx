@@ -47,7 +47,7 @@ export default function InfiniteGallery({ className, children, imgsGallery }) {
 
   const startAutoScroll = useCallback(() => {
   if (!isDown) {
-    moveGallery(-.5); // Твоя функція руху
+    moveGallery(-1); // Твоя функція руху
   }
   timerRef.current = requestAnimationFrame(startAutoScroll);
 }, [isDown]);

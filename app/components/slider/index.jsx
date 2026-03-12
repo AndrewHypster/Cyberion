@@ -33,23 +33,33 @@ const Slider = ({ children, currentId, setCurrentId }) => {
       <button className={s.close} onClick={() => setCurrentId(null)}>
         X
       </button>
-      <button className={`${s.btn} ${s.prev}`} onClick={prev}>
+      <button
+        className={`${s.btn} ${s.prev}`}
+        onClick={prev}
+        aria-label="Попередній слайд"
+      >
         &lt;
       </button>
-      <div
+      <button
         className={`${s.phone_btn} ${s.phone_prev}`}
         onClick={prev}
-      ></div>
+        aria-label="Попередній слайд"
+      ></button>
       <ul className={s.list} style={{ "--index": -currentId }}>
         {Children.map(children, (child) => (
           <li className={s.item}>{child}</li>
         ))}
       </ul>
-      <div
+      <button
         className={`${s.phone_btn} ${s.phone_next}`}
         onClick={next}
-      ></div>
-      <button className={`${s.btn} ${s.next}`} onClick={next}>
+        aria-label="Наступний слайд"
+      ></button>
+      <button
+        className={`${s.btn} ${s.next}`}
+        onClick={next}
+        aria-label="Наступний слайд"
+      >
         &gt;
       </button>
     </div>
