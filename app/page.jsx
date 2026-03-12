@@ -10,7 +10,7 @@ import InfiniteGallery from "./components/gallery";
 const galleryData = [
   { id: 0, src: "/imgs/gallery-0.jpg", size: "small" },
   { id: 1, src: "/imgs/gallery-1.jpg", size: "small" },
-  { id: 2, src: "/imgs/gallery-2.jpg", size: "large" }, // Займає місце двох
+  { id: 2, src: "/imgs/gallery-2.jpg", size: "large" },
   { id: 3, src: "/imgs/gallery-3.jpg", size: "small" },
   { id: 4, src: "/imgs/gallery-4.jpg", size: "small" },
   { id: 5, src: "/imgs/gallery-5.jpg", size: "large" },
@@ -72,6 +72,7 @@ export default function Home() {
               width="1069"
               height="181"
               alt="logo"
+              priority
             />
             <h1 className={s.hero_title}>Андрійко Dev</h1>
             <p className={s.hero_desc}>
@@ -185,7 +186,7 @@ export default function Home() {
                       src={img.src}
                       width={500}
                       height={300}
-                      sizes="(max-width: 768px) 50vw, 25vw"
+                      sizes="(max-width: 768px) 50vw, 400px"
                       alt="img"
                       className={s.gallery_img}
                     />
@@ -203,6 +204,9 @@ export default function Home() {
               src="https://www.google.com/maps/d/u/0/embed?mid=15Ilu3mg1UOo3QrWmbhJqgDbGuUvG_oY&ehbc=2E312F&noprof=1"
               width="640"
               height="640"
+              loading="lazy"
+              aria-hidden="false"
+              tabIndex="0"
             ></iframe>
           </div>
         </section>
@@ -234,6 +238,8 @@ export default function Home() {
               src="/imgs/main-form.jpg"
               width="430"
               height="440"
+              sizes="(max-width: 768px) 100vw, 430px"
+              priority
               alt="наші люди"
             />
           </div>
