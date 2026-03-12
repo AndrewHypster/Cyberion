@@ -114,17 +114,21 @@ useEffect(() => {
         </div>
       </div>
       {/* SLIDER */}
-      {selectedId !== null && <Slider currentId={selectedId} setCurrentId={setSelectedId}>
-        {imgsGallery.map((img) => (
-          <Image
-            src={img.src}
-            fill
-            sizes="100vw" // Для слайдера на весь екран краще 100vw
-            priority={img.id === selectedId} // Додай це!
-            alt="img"
-          />
-        ))}
-      </Slider>}
+      {selectedId !== null && (
+        <Slider currentId={selectedId} setCurrentId={setSelectedId}>
+          {imgsGallery.map((img) => (
+            <Image
+              src={img.src}
+              fill
+              priority={img.id === selectedId} // Це змусить браузер вантажити її першою
+              loading={img.id === selectedId ? "eager" : "lazy"} // Явне вказання
+              sizes="100vw"
+              alt="img"
+              quality={80} // 100% якості не потрібно, 80 — золота середина
+            />
+          ))}
+        </Slider>
+      )}
     </>
   );
 }
