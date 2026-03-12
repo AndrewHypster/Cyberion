@@ -239,7 +239,6 @@ export default function Home() {
               width="430"
               height="440"
               sizes="(max-width: 768px) 100vw, 430px"
-              priority
               alt="наші люди"
             />
           </div>
