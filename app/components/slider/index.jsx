@@ -15,17 +15,30 @@ const Slider = ({ children, currentId, setCurrentId }) => {
     setCurrentId((p) => (p < totalItems - 1 ? p + 1 : 0));
   };
 
-  useEffect(() => console.log(currentId), [currentId]);
+  useEffect(() => {
+    if (currentId === null) return;
+
+    const handleKeyDown = (e) => {
+      if (e.key === "ArrowLeft") prev();
+      if (e.key === "ArrowRight") next();
+      if (e.key === "Escape") setCurrentId(null);
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [currentId, prev, next, setCurrentId]);
 
   return (
-    <div className={`${s.slider} ${!!currentId | currentId == 0 ? s.open : ""}`}>
-      <button className={s.close} onClick={() => setCurrentId(null)}>X</button>
-      <button className={`${s.btn} ${s.prev}`} onClick={() => prev()}>
+    <div className={`${s.slider} ${currentId !== null ? s.open : ""}`}>
+      <button className={s.close} onClick={() => setCurrentId(null)}>
+        X
+      </button>
+      <button className={`${s.btn} ${s.prev}`} onClick={prev}>
         &lt;
       </button>
       <div
         className={`${s.phone_btn} ${s.phone_prev}`}
-        onClick={() => prev()}
+        onClick={prev}
       ></div>
       <ul className={s.list} style={{ "--index": -currentId }}>
         {Children.map(children, (child) => (
@@ -34,9 +47,9 @@ const Slider = ({ children, currentId, setCurrentId }) => {
       </ul>
       <div
         className={`${s.phone_btn} ${s.phone_next}`}
-        onClick={() => next()}
+        onClick={next}
       ></div>
-      <button className={`${s.btn} ${s.next}`} onClick={() => next()}>
+      <button className={`${s.btn} ${s.next}`} onClick={next}>
         &gt;
       </button>
     </div>

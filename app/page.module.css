@@ -301,6 +301,7 @@
   overflow: hidden;
 }
 .gallery_item {
+  flex-shrink: 0;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   display: grid;

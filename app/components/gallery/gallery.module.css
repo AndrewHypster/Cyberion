@@ -6,6 +6,8 @@
 .gallary {
   overflow: hidden;
   position: relative;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 .gallary::after {

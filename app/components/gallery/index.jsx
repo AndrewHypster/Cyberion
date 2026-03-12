@@ -8,23 +8,22 @@ export default function InfiniteGallery({ className, children, imgsGallery }) {
   const trackRef = useRef(null); // Тепер ми рухаємо цей трек
   const timerRef = useRef(null);
   const xRef = useRef(0); // Поточна позиція в пікселях (через ref, щоб не було зайвих рендерів)
+  const clickStartXRef = useRef(0);
   const [selectedId, setSelectedId] = useState(null);
 
-  const handlePhotoClick = useCallback(
-    (e) => {
-      const target = e.target;
-      if (target) {
-        const id = Number(target.getAttribute("data-photo-id"));
-        setSelectedId(id);
-      }
-    },
-    []
-  );
+  const handlePhotoClick = useCallback((e) => {
+    const dragDistance = Math.abs(e.pageX - clickStartXRef.current);
+    if (dragDistance > 5) return;
 
-  const [isDown, setIsDown] = useState(true);
+    const target = e.target.closest("[data-photo-id]");
+    if (target) {
+      const id = Number(target.getAttribute("data-photo-id"));
+      setSelectedId(id);
+    }
+  }, []);
+
+  const [isDown, setIsDown] = useState(false);
   const [startX, setStartX] = useState(0);
-
-  useEffect(() => setIsDown(true), [])
 
   const moveGallery = (delta) => {
     if (!trackRef.current) return;
@@ -46,24 +45,25 @@ export default function InfiniteGallery({ className, children, imgsGallery }) {
     trackRef.current.style.transform = `translateX(${xRef.current}px)`;
   };
 
-  const startAutoScroll = () => {
-    if (timerRef.current) return;
-    timerRef.current = setInterval(() => {
-      if (!isDown) {
-        moveGallery(-1); // Рух вліво по 1px
-      }
-    }, 30);
-  };
+  const startAutoScroll = useCallback(() => {
+  if (!isDown) {
+    moveGallery(-.5); // Твоя функція руху
+  }
+  timerRef.current = requestAnimationFrame(startAutoScroll);
+}, [isDown]);
 
-  const stopAutoScroll = () => {
-    clearInterval(timerRef.current);
+const stopAutoScroll = useCallback(() => {
+  if (timerRef.current) {
+    cancelAnimationFrame(timerRef.current);
     timerRef.current = null;
-  };
+  }
+}, []);
 
-  useEffect(() => {
-    startAutoScroll();
-    return () => stopAutoScroll();
-  }, [isDown]);
+// Один useEffect для керування циклом
+useEffect(() => {
+  timerRef.current = requestAnimationFrame(startAutoScroll);
+  return () => stopAutoScroll();
+}, [startAutoScroll, stopAutoScroll]);
 
   return (
     <>
@@ -73,8 +73,8 @@ export default function InfiniteGallery({ className, children, imgsGallery }) {
           className={s.gallary}
           onMouseDown={(e) => {
             setIsDown(true);
+            clickStartXRef.current = e.pageX; // Запам'ятовуємо, де натиснули
             setStartX(e.pageX - xRef.current);
-            stopAutoScroll();
             trackRef.current.style.cursor = "grabbing";
           }}
           onMouseUp={() => {
@@ -86,10 +86,7 @@ export default function InfiniteGallery({ className, children, imgsGallery }) {
             startAutoScroll();
           }}
           onMouseMove={(e) => {
-            if (!isDown) {
-              stopAutoScroll();
-              return;
-            }
+            if (!isDown) return;
             const currentMouseX = e.pageX;
             const newX = currentMouseX - startX;
 
@@ -117,16 +114,17 @@ export default function InfiniteGallery({ className, children, imgsGallery }) {
         </div>
       </div>
       {/* SLIDER */}
-      <Slider currentId={selectedId} setCurrentId={setSelectedId}>
+      {selectedId !== null && <Slider currentId={selectedId} setCurrentId={setSelectedId}>
         {imgsGallery.map((img) => (
           <Image
             src={img.src}
             fill
-            sizes="(max-width: 768px) 50vw, 90vw"
+            sizes="100vw" // Для слайдера на весь екран краще 100vw
+            priority={img.id === selectedId} // Додай це!
             alt="img"
           />
         ))}
-      </Slider>
+      </Slider>}
     </>
   );
 }

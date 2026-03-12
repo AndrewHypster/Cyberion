@@ -185,7 +185,7 @@ export default function Home() {
                       src={img.src}
                       width={500}
                       height={300}
-                      sizes="(max-width: 768px) 50vw, 90vw"
+                      sizes="(max-width: 768px) 50vw, 25vw"
                       alt="img"
                       className={s.gallery_img}
                     />
