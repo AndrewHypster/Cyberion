@@ -28,6 +28,14 @@ const Slider = ({ children, currentId, setCurrentId }) => {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [currentId, prev, next, setCurrentId]);
 
+  useEffect(() => {
+    if (currentId != null) document.body.style.overflow = "hidden";
+    else document.body.style.overflow = "unset";
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [currentId]);
+
   return (
     <div className={`${s.slider} ${currentId !== null ? s.open : ""}`}>
       <button className={s.close} onClick={() => setCurrentId(null)}>

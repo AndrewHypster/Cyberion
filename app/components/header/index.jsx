@@ -1,31 +1,34 @@
-'use client'
+"use client";
 
 import Link from "next/link";
 import s from "./header.module.css";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
 
+  useEffect(() => {
+    if (isOpen) document.body.style.overflow = "hidden";
+    else document.body.style.overflow = "unset";
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
+
   return (
-    <div className={`${s.wrapper} ${isOpen?s.open:''}`}>
+    <div className={`${s.wrapper} ${isOpen ? s.open : ""}`}>
       <header className={s.header}>
         <div className={s.content}>
-          <Link className={s.logo} href="#">
+          <Link className={s.logo} href="/">
             <Image src="/icons/logo.svg" width="203" height="34" alt="logo" />
           </Link>
 
           <nav className={s.navigation}>
             <ul className={s.list}>
               <li className={s.item}>
-                <Link className={s.itemLink} href="#">
-                  Турніри
-                </Link>
-              </li>
-              <li className={s.item}>
-                <Link className={s.itemLink} href="#">
+                <Link className={s.itemLink} href="/news">
                   Новини
                 </Link>
               </li>
@@ -93,16 +96,11 @@ const Header = () => {
           </button>
         </div>
       </header>
-      
+
       {/* Sidebar */}
       <div className={`${s.menu} ${isOpen ? s.menuOpen : ""}`}>
         <nav className={s.mobileNav}>
           <ul>
-            <li>
-              <Link href="#" onClick={toggleMenu}>
-                Турніри
-              </Link>
-            </li>
             <li>
               <Link href="#" onClick={toggleMenu}>
                 Новини
