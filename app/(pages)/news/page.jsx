@@ -5,7 +5,9 @@ import NewsList from "./newsList";
 async function getAllNews(page, size) {
   // Викликаємо свій API
   const res = await fetch(
-    `${env.proccess.DOMAIN || "http://localhost:3000"}/api/news?page=${page}&size=${size}`,
+    `${
+      process.env.DOMAIN || "http://localhost:3000"
+    }/api/news?page=${page}&size=${size}`,
     { next: { revalidate: 60 } }
   );
   if (!res.ok) throw new Error("Failed to fetch news");
