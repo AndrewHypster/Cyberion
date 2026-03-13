@@ -1,8 +1,10 @@
-"use client"; // Обов'язково!
+"use client";
 
 import { useState } from "react";
 import { CardNews } from "@/app/components/cards";
 import s from "./news.module.css";
+import { getNewsData } from "@/app/lib/news";
+
 
 export default function NewsList({ initialNews, initialPage, totalPages }) {
   const [news, setNews] = useState(initialNews);
@@ -15,18 +17,12 @@ export default function NewsList({ initialNews, initialPage, totalPages }) {
     setLoading(true);
     const nextPage = page + 1;
 
-    try {
-      const res = await fetch(`/api/news?page=${nextPage}&size=6`);
-      const data = await res.json();
+    // Викликаємо функцію як звичайний JavaScript
+    const data = await getNewsData(nextPage, 6);
 
-      // Додаємо нові дані до старих
-      setNews((prev) => [...prev, ...data.items]);
-      setPage(nextPage);
-    } catch (e) {
-      console.error("Failed to load more news");
-    } finally {
-      setLoading(false);
-    }
+    setNews((prev) => [...prev, ...data.items]);
+    setPage(nextPage);
+    setLoading(false);
   };
 
   return (

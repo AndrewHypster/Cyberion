@@ -1,7 +1,8 @@
+"use server"; // Обов'язково для Server Actions
+
 import fs from "fs";
 import path from "path";
 
-// Ця функція працює миттєво і на сервері, і під час білду
 export async function getNewsData(page = 1, size = 6) {
   try {
     const filePath = path.join(process.cwd(), "app/api/dataBase/news.json");

@@ -4,7 +4,7 @@ import NewsList from "./newsList";
 import { getNewsData } from "@/app/lib/news";
 
 const News = async () => {
-  // Завантажуємо перші 6 новин на сервері
+  // Прямий виклик при першому рендері на сервері
   const data = await getNewsData(1, 6);
 
   return (
@@ -13,7 +13,7 @@ const News = async () => {
         <h1 className={s.title}>Новини</h1>
         <Image
           src="/imgs/news.png"
-          alt="Банер новин"
+          alt="Банер"
           width={2048}
           height={363}
           priority
@@ -23,7 +23,6 @@ const News = async () => {
       </div>
 
       <section>
-        {/* Передаємо початкові дані в клієнтський список */}
         <NewsList
           initialNews={data.items}
           initialPage={1}
