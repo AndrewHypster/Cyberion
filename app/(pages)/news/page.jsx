@@ -1,22 +1,11 @@
 import Image from "next/image";
 import s from "./news.module.css";
 import NewsList from "./newsList";
-
-async function getAllNews(page, size) {
-  // Викликаємо свій API
-  const res = await fetch(
-    `${
-      process.env.DOMAIN || "http://localhost:3000"
-    }/api/news?page=${page}&size=${size}`,
-    { next: { revalidate: 60 } }
-  );
-  if (!res.ok) throw new Error("Failed to fetch news");
-  return res.json();
-}
+import { getNewsData } from "@/app/lib/news";
 
 const News = async () => {
   // Завантажуємо перші 6 новин на сервері
-  const data = await getAllNews(1, 6);
+  const data = await getNewsData(1, 6);
 
   return (
     <main>
