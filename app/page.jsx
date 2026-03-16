@@ -6,6 +6,7 @@ import Link from "next/link";
 import { CardNews } from "./components/cards";
 import ObservedElement from "./components/observed-element";
 import InfiniteGallery from "./components/gallery";
+import { useState } from "react";
 
 const galleryData = [
   { id: 0, src: "/imgs/gallery-0.jpg", size: "small" },
@@ -59,8 +60,43 @@ const BnftItem = ({ delay, img, alt, text }) => {
   );
 };
 
+
+
 export default function Home() {
-  
+  const [status, setStatus] = useState("idle");
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("loading");
+
+    // Збираємо дані прямо з форми
+    const formData = new FormData(e.target);
+    const data = {
+      name: formData.get("name"),
+      phone: formData.get("phone"),
+      message: formData.get("message"),
+    };
+
+    const text = `<b>Coffee House</b>\n\n<b>Ім'я:</b> ${data.name}\n<b>Телефон:</b> ${data.phone}\n<b>Повідомлення:</b> ${data.message}`;
+
+    try {
+      const res = await fetch("/api/tg-bot", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({text}),
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        e.target.reset(); // Очищаємо форму
+      } else {
+        setStatus("error");
+      }
+    } catch (err) {
+      setStatus("error");
+    }
+  };
+
   return (
     <div className={s.page}>
       <main className={s.main}>
@@ -215,24 +251,20 @@ export default function Home() {
 
         <section className={s.form_sec}>
           <div className={s.form_wrap}>
-            <form className={s.form}>
+            <form className={s.form} onSubmit={onSubmit}>
               <h2 className={s.form_title}>
                 ХОЧЕШ <span>ВЛАСНИЙ КЛУБ?</span>
                 <br />
                 <small>НАПИШИ НАМ</small>
               </h2>
-              <input type="text" name="Ім'я" placeholder="Ім'я" />
+              <input type="text" name="name" placeholder="Ім'я" />
               <input
-                type="email"
-                name="Email"
-                placeholder="Email"
+                type="phone"
+                name="phone"
+                placeholder="Телефон"
                 autoComplete="true"
               />
-              <input
-                type="text"
-                name="Повідомлення"
-                placeholder="Повідомлення"
-              />
+              <input type="text" name="message" placeholder="Повідомлення" />
               <button>Відправити</button>
             </form>
             <Image

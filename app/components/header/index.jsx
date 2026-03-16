@@ -102,7 +102,7 @@ const Header = () => {
         <nav className={s.mobileNav}>
           <ul>
             <li>
-              <Link href="#" onClick={toggleMenu}>
+              <Link href="/news" onClick={toggleMenu}>
                 Новини
               </Link>
             </li>
