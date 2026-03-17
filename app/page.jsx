@@ -129,7 +129,7 @@ export default function Home() {
             <li className={s.news_item}>
               <CardNews
                 img="/imgs/news-0.png"
-                link="#"
+                link="cyberion-grand-cup-2026"
                 text="CYBERDAY від CYBERION! Гравці з усіх міст зійшлися на головному турнірі країни!"
                 date="14.11.2025"
               />
@@ -137,7 +137,7 @@ export default function Home() {
             <li className={s.news_item}>
               <CardNews
                 img="/imgs/news-0.png"
-                link="#"
+                link="cyberion-grand-cup-2016"
                 text="CYBERDAY від CYBERION! Гравці з усіх міст зійшлися на головному турнірі країни!"
                 date="14.11.2025"
               />
@@ -145,7 +145,7 @@ export default function Home() {
             <li className={s.news_item}>
               <CardNews
                 img="/imgs/news-0.png"
-                link="#"
+                link="cyberion-grand-cup-2018"
                 text="CYBERDAY від CYBERION! Гравці з усіх міст зійшлися на головному турнірі країни!"
                 date="14.11.2025"
               />
@@ -153,14 +153,14 @@ export default function Home() {
             <li className={s.news_item}>
               <CardNews
                 img="/imgs/news-0.png"
-                link="#"
+                link="cyberion-grand-cup-2006"
                 text="CYBERDAY від CYBERION! Гравці з усіх міст зійшлися на головному турнірі країни!"
                 date="14.11.2025"
               />
             </li>
           </ul>
 
-          <Link className={s.news_link} href="#">
+          <Link className={s.news_link} href="/news">
             <button className={s.news_btn}>Більше новин</button>
           </Link>
         </section>

@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export const CardNews = ({ img, text, date, link, className }) => {
   return (
-    <Link className={`${s.link} ${className ?? ""}`} href={link}>
+    <Link className={`${s.link} ${className ?? ""}`} href={'/news/'+link}>
       <div className={s.img_wrap}>
         <Image
           src={img}

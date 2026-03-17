@@ -1,0 +1,53 @@
+.page {
+  max-width: 1370px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.img {
+  width: 100%;
+  object-fit: contain;
+  background-color: #000;
+  border-radius: 30px;
+}
+
+.date {
+  gap: 8px;
+  align-items: center;
+  display: flex;
+}
+
+.date_text {
+  font-size: 28px;
+  font-weight: 550;
+  letter-spacing: .02em;
+}
+
+.title {
+  margin: 14px 0;
+  font-size: 40px;
+  color: var(--yellow);
+}
+
+.content {
+  font-size: 18px;
+  gap: 8px;
+  display: grid;
+}
+
+.content h3 {
+  margin-top: .5em;
+  font-size: 1.5em;
+}
+
+.content h4 {
+  margin-top: .5em;
+  font-size: 1.2em;
+}
+
+.content strong {
+  color: var(--yellow);
+  font-weight: normal;
+}
+
