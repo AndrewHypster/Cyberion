@@ -51,7 +51,14 @@
   font-weight: normal;
 }
 
+.content a {
+text-decoration: underline;
+}
+
 @media (max-width: 991px) {
+  .page {
+    padding: 0 2vw;
+  }
   .date_icon {
     width: 5vw;
     height: 5vw;
