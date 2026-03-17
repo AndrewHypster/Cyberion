@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState,useCallback, Children } from "react";
 import s from "./gallery.module.css";
-import Slider from "../slider";
+import { Slider } from "../slider";
 import Image from "next/image";
 
 export default function InfiniteGallery({ className, children, imgsGallery }) {

@@ -38,7 +38,7 @@ const Header = () => {
                 </Link>
               </li>
               <li className={s.item}>
-                <Link className={s.itemLink} href="#">
+                <Link className={s.itemLink} href="/blog">
                   Блог
                 </Link>
               </li>
@@ -112,7 +112,7 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link href="#" onClick={toggleMenu}>
+              <Link href="/blog" onClick={toggleMenu}>
                 Блог
               </Link>
             </li>
