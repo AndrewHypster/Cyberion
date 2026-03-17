@@ -32,7 +32,7 @@ export default function NewsList({ initialNews, initialPage, totalPages }) {
           <li className={s.item} key={k}>
             <CardNews
               img={item.image}
-              link={`/news/${item.id}`}
+              link={item.id}
               text={item.title}
               date={item.date}
             />

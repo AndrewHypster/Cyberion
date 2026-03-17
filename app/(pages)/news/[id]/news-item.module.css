@@ -57,7 +57,7 @@ text-decoration: underline;
 
 @media (max-width: 991px) {
   .page {
-    padding: 0 2vw;
+    padding: 0 4vw;
   }
   .date_icon {
     width: 5vw;
