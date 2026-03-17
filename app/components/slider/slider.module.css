@@ -166,7 +166,7 @@
 
 @media (max-width: 991px) {
   .motion_slider {
-    padding-bottom: 8vw;
+    padding-bottom: 12vw;
   }
   .motion_item {
     width: 90%;
@@ -180,7 +180,7 @@
     top: auto;
     bottom: 0;
     transform: translateY(0);
-    font-size: 4vw;
+    font-size: 6vw;
   }
 }
 /* #endregion Motion slider */

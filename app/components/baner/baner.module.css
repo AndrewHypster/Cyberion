@@ -28,3 +28,12 @@
   height: auto;
   user-select: none;
 }
+
+@media (max-width: 991px) {
+  .title {
+    font-size: 11vw;
+  }
+  .img {
+    height: 25vw;
+  }
+}
