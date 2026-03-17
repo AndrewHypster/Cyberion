@@ -53,16 +53,16 @@
 
 @media (max-width: 991px) {
   .date_icon {
-    width: 2.8vw;
-    height: 2.8vw;
+    width: 3.2vw;
+    height: 3.2vw;
   }
   .date_text {
-    font-size: 2.8vw;
+    font-size: 3.2vw;
   }
   .title {
-    font-size: 4vw;
+    font-size: 8vw;
   }
   .content {
-    font-size: 1.8vw;
+    font-size: 2.5vw;
   }
 }
