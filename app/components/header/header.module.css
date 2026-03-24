@@ -78,7 +78,7 @@
 .sidebar {
   width: 7vw;
   height: 4.5vw;
-  background-color: transparent;
+  background-color: transparent !important;
   justify-content: space-between;
   flex-direction: column;
   display: none;

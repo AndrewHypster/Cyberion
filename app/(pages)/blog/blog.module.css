@@ -10,3 +10,8 @@
   display: grid;
 }
 
+@media (max-width: 991px) {
+  .cards {
+    gap: 10vw;
+  }
+}

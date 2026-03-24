@@ -25,7 +25,7 @@ export const CardBlogFlex = ({ img, date, title, desc, link }) => {
   return (
     <div className={s.blog_card}>
       <div className={s.blog_cntnt}>
-        <Image src={img} width={300} height={170} alt={title} />
+        <Image className={s.blog_img} src={img} width={300} height={170} alt={title} />
         <div className={s.blog_text}>
           <small className={s.blog_date}>{date}</small>
           <h3 className={s.blog_title}>{title}</h3>
