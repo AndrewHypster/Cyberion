@@ -4,7 +4,7 @@ import { useSearchParams } from "next/navigation";
 
 function ThemeLogic() {
   const searchParams = useSearchParams();
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("");
 
   useEffect(() => {
     // 1. Пріоритет №1: Параметр у посиланні (?theme=dark)
@@ -13,7 +13,7 @@ function ThemeLogic() {
     const savedTheme = localStorage.getItem("theme");
 
     // Визначаємо фінальну тему
-    const finalTheme = urlTheme || savedTheme || "light";
+    const finalTheme = urlTheme || savedTheme || "";
 
     setTheme(finalTheme);
     document.documentElement.setAttribute("data-theme", finalTheme);
