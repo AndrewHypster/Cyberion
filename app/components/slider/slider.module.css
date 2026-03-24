@@ -59,7 +59,7 @@
   z-index: 1;
   width: 30vw;
   height: 100dvh;
-  background-color: transparent;
+  background-color: transparent !important;
   border-radius: 0;
   display: none;
 }
