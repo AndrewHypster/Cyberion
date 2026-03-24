@@ -20,3 +20,21 @@ export const CardNews = ({ img, text, date, link, className }) => {
     </Link>
   );
 };
+
+export const CardBlogFlex = ({ img, date, title, desc, link }) => {
+  return (
+    <div className={s.blog_card}>
+      <div className={s.blog_cntnt}>
+        <Image src={img} width={300} height={170} alt={title} />
+        <div className={s.blog_text}>
+          <small className={s.blog_date}>{date}</small>
+          <h3 className={s.blog_title}>{title}</h3>
+          <p className={s.blog_desc}>{desc}</p>
+        </div>
+      </div>
+      <a href={link}>
+        <button className={s.blog_button}>Переглянути</button>
+      </a>
+    </div>
+  )
+}

@@ -1,3 +1,12 @@
 .baner::after {
  background: transparent;
 }
+
+.cards {
+  max-width: 1370px;
+  margin: 0 auto;
+  padding: 0 40px;
+  gap: 32px;
+  display: grid;
+}
+

@@ -2,6 +2,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "./components/header";
 import Footer from "./components/footer";
+import ThemeManager from "./components/theme";
 
 const helvetica = localFont({
   src: [
@@ -36,8 +37,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="uk">
+    <html lang="uk" data-theme="main" suppressHydrationWarning>
       <body className={helvetica.variable}>
+        <ThemeManager />
         <Header />
         {children}
         <Footer />

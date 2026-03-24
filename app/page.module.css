@@ -12,7 +12,7 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--black);
+  background-color: var(--bg-main);
   opacity: 0.6;
   display: block;
 }
@@ -170,7 +170,7 @@
   transform: translateX(-50%);
   width: calc(100% - 210px / 2);
   height: 4px;
-  background: linear-gradient(-90deg, var(--yellow) 50%, var(--black) 50%);
+  background: linear-gradient(-90deg, var(--accent-primary) 50%, var(--bg-main) 50%);
   background-size: 200%;
   display: block;
 }
@@ -182,9 +182,9 @@
 .bnft_item img {
   margin: 0 auto;
   padding: 18px;
-  border: 1px solid var(--yellow);
+  border: 1px solid var(--accent-primary);
   border-radius: 100vw;
-  background-color: #1d1d1d;
+  background-color: var(--bg-card);
   display: block;
 }
 
@@ -196,8 +196,8 @@
   font-size: 14px;
   font-weight: 400;
   text-align: center;
-  background-color: #1d1d1d;
-  border: 1px solid var(--yellow);
+  background-color: var(--bg-card);
+  border: 1px solid var(--accent-primary);
   border-radius: 8px;
   opacity: 0;
   display: block;
@@ -211,8 +211,8 @@
   transform: translate(-50%, -50%) rotateZ(-135deg);
   width: 12px;
   height: 12px;
-  box-shadow: 1px 1px 0 var(--yellow);
-  background-color: #1d1d1d;
+  box-shadow: 1px 1px 0 var(--accent-primary);
+  background-color: var(--bg-card);
   display: block;
 }
 
@@ -277,10 +277,10 @@
 
 @keyframes bnft_icon {
   from {
-    background-color: #1d1d1d;
+    background-color: var(--bg-card);
   }
   to {
-    background-color: var(--yellow);
+    background-color: var(--accent-primary);
   }
 }
 
@@ -391,7 +391,7 @@
   transform: translate(15px, -50%);
   width: calc(150%);
   height: calc(100%);
-  background: linear-gradient(90deg, #0e0e0e 25%, #fff);
+  background: linear-gradient(90deg, var(--bg-main) 25%, var(--text-main));
   border-radius: 100vw;
   display: block;
 }
@@ -405,7 +405,7 @@
   width: 150%;
   height: calc(100% - 56px / 2);
   border-radius: 100vw;
-  background-color: #0e0e0e;
+  background-color: var(--bg-main);
   display: block;
 }
 .form_img {
@@ -421,7 +421,7 @@
   text-wrap: wrap;
 }
 .form_title span {
-  color: var(--yellow);
+  color: var(--accent-primary);
 }
 .form_title small {
   font-size: 0.6em;
@@ -439,10 +439,10 @@
 }
 .form input {
   padding: 18px;
-  border: 2px solid #555;
-  background: rgba(29, 29, 29, 0.4);
+  border: 2px solid var(--border-light);
+  background: var(--bg-card);
   border-radius: 100vw;
-  color: var(--white);
+  color: var(--text-muted);
 }
 .form button {
   font-size: 20px;
@@ -465,7 +465,7 @@
     transform: translate(0);
     height: 150%;
     width: 100%;
-    background: linear-gradient(0deg, #0e0e0e 25%, #fff);
+    background: linear-gradient(0deg, var(--bg-main) 25%, var(--text-main));
   }
   .form_wrap::after {
     top: 0;

@@ -1,9 +1,5 @@
-.footer {
- 
-}
-
 .content {
-padding:40px 80px;
+  padding: 40px 80px;
   gap: 120px;
   display: flex;
 }
@@ -19,7 +15,7 @@ padding:40px 80px;
 }
 
 .title {
-  color: #646464;
+  color: var(--border-light);
 }
 
 .button {

@@ -17,7 +17,7 @@
   z-index: 1;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, #0e0e0e, transparent 10% 90%, #0e0e0e);
+  background: linear-gradient(90deg, var(--bg-main), transparent 10% 90%, var(--bg-main));
   pointer-events: none;
   display: block;
 }
